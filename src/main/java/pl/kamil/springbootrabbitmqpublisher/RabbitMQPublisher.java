@@ -21,6 +21,6 @@ class RabbitMQPublisher {
     }
 
     void publishToA(Order order) {
-        rabbitTemplate.convertAndSend(exchange.getName(), ROUTING_A, order);
+        rabbitTemplate.convertAndSend(exchange.getName(), ROUTING_A, order); // in case of FanoutExchange routingKey should be empty
     }
 }
